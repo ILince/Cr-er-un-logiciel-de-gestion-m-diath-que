@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Supprimer l'emprunt</title>
+</head>
+<body>
+<h1>Supprimer l'emprunt</h1>
+<p>Êtes-vous sûr de vouloir supprimer cet emprunt?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Oui, supprimer</button>
+</form>
+<a href="{% url 'emprunteur_detail' emprunt.emprunteur.id %}">Annuler</a>
+</body>
+</html>

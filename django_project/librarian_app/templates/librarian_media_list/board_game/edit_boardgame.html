@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier un Jeu de Plateau</title>
+</head>
+<body>
+<h1>Modifier un Jeu de Plateau</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Modifier</button>
+</form>
+<a href="{% url 'list_media' %}">Retour à la liste des jeux de plateau</a>
+</body>
+</html>
+

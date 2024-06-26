@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier l'emprunt</title>
+</head>
+<body>
+<h1>Modifier l'emprunt</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sauvegarder</button>
+</form>
+<a href="{% url 'emprunteur_detail' emprunt.emprunteur.id %}">Retour aux détails de l'emprunteur</a>
+</body>
+</html>

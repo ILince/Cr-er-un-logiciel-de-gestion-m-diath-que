@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails de l'emprunteur</title>
+</head>
+<body>
+<h1>Détails des emprunts de {{ emprunteur.nom }}</h1>
+<h2>Liste des emprunts</h2>
+<ul>
+    {% for emprunt in emprunts %}
+    <li>
+        {% if emprunt.livre %}
+        Livre : {{ emprunt.livre.name }}
+        {% elif emprunt.dvd %}
+        DVD : {{ emprunt.dvd.name }}
+        {% elif emprunt.cd %}
+        CD : {{ emprunt.cd.name }}
+        {% endif %}
+        - Date d'emprunt : {{ emprunt.date_emprunt }}
+
+        <a href="{% url 'delete_emprunt' emprunt.id %}">Supprimer</a>
+    </li>
+    {% empty %}
+    <li>Aucun emprunt</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'list_emprunteurs' %}">Retour à la liste des emprunteurs</a>
+</body>
+</html>

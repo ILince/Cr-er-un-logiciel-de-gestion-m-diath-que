@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des membres emprunteurs</title>
+</head>
+<body>
+<h1>Liste des membres</h1>
+<ul>
+    {% for emprunteur in emprunteurs %}
+
+    <li>
+        <p>
+            Nom : {{ emprunteur.nom }} - Statut : {% if emprunteur.bloquer %}Bloqué !{% else %}Actif{% endif %}<br>
+            <a href="{% url 'emprunteur_detail' emprunteur.pk %}">Détail des emprunts</a> |
+            <a href="{% url 'update_emprunteur' emprunteur.pk %}">Modifier</a> ou
+            <a href="{% url 'delete_emprunteur' emprunteur.pk %}">Supprimer</a> ce membre
+        </p>
+        {% endfor %}
+</ul>
+<p>
+    <a href="{% url 'add_emprunteur' %}">Ajouter un nouveau membre</a><br>
+    <a href="{% url 'create_emprunt' %}">Créer un emprunt</a><br>
+    <a href="{% url 'librarian_menu' %}">Retour vers le menu</a>
+</p>
+</body>
+</html>

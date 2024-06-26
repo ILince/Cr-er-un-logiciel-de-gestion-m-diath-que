@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace bibliothécaire</title>
+</head>
+<body>
+<h1>Menu du bibliothécaire</h1>
+<ul>
+    <li><a href="{% url 'list_emprunteurs' %}">Liste des Emprunteurs</a></li>
+    <li><a href="{% url 'list_media' %}">Liste des médias</a></li>
+</ul>
+
+<a href="{% url 'home' %}">Retour vers la page d'accueil</a>
+</body>
+</html>

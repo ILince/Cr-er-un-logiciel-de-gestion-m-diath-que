@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Supprimer un Média</title>
+</head>
+<body>
+<h1>Supprimer un Média</h1>
+<p>Êtes-vous sûr de vouloir supprimer {{ media_item.name }} ?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmer la suppression</button>
+</form>
+<a href="{% url 'list_media' %}">Annuler</a>
+</body>
+</html>
